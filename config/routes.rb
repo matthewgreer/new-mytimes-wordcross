@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   namespace :api, defaults: { format: :json } do
-    
+
     resources :users, only: [:create, :update] do
       get 'user_dailies/:wordcross_date', to: 'user_dailies#show', as: 'daily_fetch'
       patch 'user_dailies/:id', to: 'user_dailies#update', as: 'daily_update'
@@ -21,5 +21,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root to: "static_pages#root"
 end
