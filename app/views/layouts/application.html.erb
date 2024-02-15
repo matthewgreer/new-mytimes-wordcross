@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NewMytimesWordcross</title>
+    <title>The Mad Year Times Wordcross</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,15 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <script type="text/javascript">
+        window.currentUser = <%= render(
+          "api/users/user.json.jbuilder",
+          user: current_user
+        ).html_safe %>
+      </script>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
