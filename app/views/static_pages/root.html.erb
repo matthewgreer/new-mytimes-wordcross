@@ -6,4 +6,17 @@
   <% else %>
     <p>No user</p>
   <% end %>
+  <%= render HeaderComponent.new(logged_in: logged_in?) do |c|%>
+    <%= c.with_notice %>
+    <%= c.with_navigation %>
+    <%= c.with_logo %>
+  <% end %>
+  <%= form_tag('/session') do %>
+    <%= label_tag('Email') %>
+    <%= email_field_tag('user[email]') %>
+    <%= label_tag('Password') %>
+    <%= password_field_tag('user[password]') %>
+    <%= submit_tag('Log in') %>
+  <% end %>
+
 </main>

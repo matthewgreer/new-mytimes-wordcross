@@ -1,1 +1,1 @@
-json.partial! "api/micros/micro", microAuthor: @micro.author
+json.partial! "micros/micro", microAuthor: @micro.author

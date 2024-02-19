@@ -1,10 +1,11 @@
-class Api::SessionsController < ApplicationController
+class SessionsController < ApplicationController
   def create
     @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
 
     if @user
       login!(@user)
-      render '/api/users/show'
+      # render '/users/show' # this is the jbuilder file
+      render 'static_pages/root', user: @user
     else
       # custom error messages - is there a better way to do this?
       errors = []

@@ -1,4 +1,4 @@
-class Api::UserDailiesController < ApplicationController
+class UserDailiesController < ApplicationController
 
   # ! IF MICROS WORK USING THE INITIALIZABLE CONCERN, THEN DAILIES SHOULD BE CONVERTED TO USE IT AS WELL !
 

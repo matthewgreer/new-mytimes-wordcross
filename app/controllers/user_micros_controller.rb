@@ -1,4 +1,4 @@
-class Api::UserMicrosController < ApplicationController
+class UserMicrosController < ApplicationController
 
 include Initializable
 

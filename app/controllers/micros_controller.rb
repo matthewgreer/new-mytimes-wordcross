@@ -1,4 +1,4 @@
-class Api::MicrosController < ApplicationController
+class MicrosController < ApplicationController
   def show
     # query for micro by date
     @micro = Micro.find_by(wordcross_date: params[:wordcross_date])

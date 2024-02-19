@@ -1,4 +1,4 @@
-class Api::DailiesController < ApplicationController
+class DailiesController < ApplicationController
   def show
     # query for daily by date
     @daily = Daily.find_by(wordcross_date: params[:wordcross_date])
